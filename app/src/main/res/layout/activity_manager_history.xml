@@ -1,0 +1,64 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:background="#ff5e5e5e"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text ="№"
+            android:layout_weight="1.35"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Зміна"
+            android:layout_weight="1.35"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Назва"
+            android:layout_weight="0.8"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Кошти"
+            android:layout_weight="1.4"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Дата"
+            android:id="@+id/tvDateItemHistory"
+            android:layout_weight="1.1"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center" />
+        </LinearLayout>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/lvHistory"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        </ListView>
+</LinearLayout>

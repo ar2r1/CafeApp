@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="user.hotelgrand" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ActivityStart"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityMain"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityRestaurant"
+            android:label="@string/title_activity_restaurant"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityDish"
+            android:label="@string/title_activity_dish"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityManager"
+            android:label="@string/title_activity_manager"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityManagerMenu"
+            android:label="@string/title_activity_manager_menu"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityManagerHistory"
+            android:label="@string/title_activity_manager_history"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityManagerUser"
+            android:label="@string/title_activity_activity_user"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityManagerSession"
+            android:label="@string/title_activity_activity_manager_session"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ActivityExpListView"
+            android:label="@string/title_activity_exp_list_view" >
+        </activity>
+    </application>
+
+</manifest>

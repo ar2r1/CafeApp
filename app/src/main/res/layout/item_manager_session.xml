@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8"
+    android:background="#ff5e5e5e">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="id_ses"
+        android:id="@+id/tvItemIdManagerSession"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:layout_weight="1.05" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="date_begin"
+        android:id="@+id/tvItemDateBeginManagerSession"
+        android:layout_weight="0.95"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="date_end"
+        android:id="@+id/tvItemDateEndManagerSession"
+        android:layout_weight="0.95"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="First"
+        android:id="@+id/tvItemFisrtName1ManagerSession"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Second"
+        android:id="@+id/tvItemSecondNameManagerSession"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="FisrtName"
+        android:id="@+id/tvItemFisrtName2ManagerSession"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="SecondName"
+        android:id="@+id/tvItemSecondName2ManagerSession"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="income"
+        android:id="@+id/tvItemIncomeManagerSession"
+        android:layout_weight="1.05"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        android:gravity="center" />
+</LinearLayout>

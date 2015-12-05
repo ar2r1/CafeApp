@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ff5e5e5e">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOrderItemName"
+        android:layout_marginLeft="5dp"
+        android:text="Назва страви"
+        android:textSize="18dp"
+        android:layout_alignParentLeft="true"
+        android:textColor="#ffffff" />
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvOrderItemPrice"
+        android:textSize="18dp"
+        android:text="16.00"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff" />
+</RelativeLayout>

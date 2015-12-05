@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="4"
+    android:background="#ff5e5e5e">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="category"
+        android:textSize="24dp"
+        android:id="@+id/tvCategoryItemManagerMenu"
+        android:layout_weight="1.1"
+        android:textColor="#ffffff" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Somme-name-of-dish"
+        android:textSize="24dp"
+        android:id="@+id/tvDishItemManagerMenu"
+        android:layout_weight="1"
+        android:textIsSelectable="false"
+        android:textColor="#ffffff" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="some-description-of-dish"
+        android:textSize="24dp"
+        android:id="@+id/tvDescriptionItemManagerMenu"
+        android:layout_weight="0.7"
+        android:textIsSelectable="false"
+        android:textColor="#ffffff" />
+    <CheckedTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:textSize="24dp"
+        android:id="@+id/tvPriceItemManagerMenu"
+        android:layout_weight="1.2"
+        android:textColor="#ffffff"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple" />
+</LinearLayout>

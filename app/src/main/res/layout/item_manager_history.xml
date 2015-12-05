@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="6"
+    android:background="#ff5e5e5e">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text ="ID"
+        android:id="@+id/tvIdItemHistory"
+        android:layout_weight="1.35"
+        android:textColor="#ffffff"
+        android:textSize="21dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="SessionID"
+        android:id="@+id/tvSessionItemHistory"
+        android:layout_weight="1.35"
+        android:textColor="#ffffff"
+        android:textSize="21dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="somethin_here"
+        android:id="@+id/tvNameItemHistory"
+        android:layout_weight="0.8"
+        android:textColor="#ffffff"
+        android:textSize="21dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="123456"
+        android:id="@+id/tvPriceItemHistory"
+        android:layout_weight="1.4"
+        android:textColor="#ffffff"
+        android:textSize="21dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="24:02:94 24.02.1994"
+        android:id="@+id/tvDateItemHistory"
+        android:layout_weight="1.1"
+        android:textColor="#ffffff"
+        android:textSize="21dp"
+        android:gravity="center" />
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="4"
+    android:background="#ff5e5e5e">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="first_name"
+        android:textSize="21dp"
+        android:id="@+id/tvFirstNameManagerUser"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Second_name"
+        android:textSize="21dp"
+        android:id="@+id/tvSecondNameManagerUser"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="21dp"
+        android:id="@+id/tvLoginManagerUser"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <CheckedTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="******"
+        android:textSize="21dp"
+        android:id="@+id/tvPasswordManagerUser"
+        android:layout_weight="1"
+        android:textColor="#ffffff"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:gravity="center" />
+</LinearLayout>

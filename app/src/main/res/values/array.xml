@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>Перші страви</item>
+        <item>Другі страви</item>
+        <item>Салати</item>
+        <item>Гарніри</item>
+        <item>Десерти</item>
+        <item>Комплексні обіди</item>
+        <item>Гарячі напої</item>
+        <item>Соки</item>
+        <item>Вода негазована</item>
+        <item>Вода газована</item>
+        <item>Пиво</item>
+        <item>Вино</item>
+    </string-array>
+</resources>

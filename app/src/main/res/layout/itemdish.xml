@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff5e5e5e">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvItemName"
+            android:text="НазваСтрави"
+            android:textSize="36dp"
+            android:layout_gravity="left"
+            android:layout_weight="2"
+            android:textColor="#ffffff"
+            android:textStyle="italic">
+            </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvItemPrice"
+            android:textSize="36dp"
+            android:text="16.00"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffffff">
+            </TextView>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvItemDescription"
+            android:text="ОписСтрави"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:background="#ff5e5e5e"
+            android:textColor="#ffffff" />
+</LinearLayout>
