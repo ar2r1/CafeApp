@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.interfaces.Utils;
+
 
 public class ActivityStart extends ActionBarActivity implements Utils {
 

@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 public interface DatabaseConstantsInterface {
 
+    String MY_LOGS_TAG = "myLogs";
+
     String DATABASE_TABLE_MENU = "menu";
     String MENU_COLUMN_ID = "id_menu";
     String MENU_COLUMN_DISH = "dish";

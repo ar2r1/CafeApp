@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import user.hotelgrand.interfaces.DatabaseConstantsInterface;
 import user.hotelgrand.interfaces.DishTableInterface;
 
-public class Dish implements DishTableInterface, DatabaseConstantsInterface {
+public class DishDBTable implements DishTableInterface, DatabaseConstantsInterface {
 
     @Override
     public void createTable(SQLiteDatabase db) {

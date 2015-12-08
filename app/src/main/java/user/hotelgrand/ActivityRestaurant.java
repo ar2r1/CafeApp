@@ -17,6 +17,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.interfaces.Utils;
+
 public class ActivityRestaurant extends ActionBarActivity implements View.OnClickListener, Utils {
 
     private ListView lvOrderList;

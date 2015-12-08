@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.interfaces.Utils;
+
 public class ActivityManagerMenu extends ActionBarActivity implements View.OnClickListener, Utils {
 
     private EditText etNameDishManagerMenu, etDescDishManagerMenu, etPriceDishManagerMenu;

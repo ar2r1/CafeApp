@@ -6,7 +6,18 @@ import android.database.sqlite.SQLiteDatabase;
 import user.hotelgrand.interfaces.DatabaseConstantsInterface;
 import user.hotelgrand.interfaces.SessionTableInterface;
 
-public class Session implements SessionTableInterface, DatabaseConstantsInterface {
+public class SessionDBTable implements SessionTableInterface, DatabaseConstantsInterface {
+
+    @Override
+    public void createTable (SQLiteDatabase datab){
+        datab.execSQL("create table " + DATABASE_TABLE_SESSION + " (" +
+                SESSION_COLUMN_ID + " integer primary key autoincrement, " +
+                SESSION_COLUMN_DATE_BEGIN + " text, " +
+                SESSION_COLUMN_DATE_END + " text, " +
+                SESSION_COLUMN_ID_USER1 + " integer, " +
+                SESSION_COLUMN_ID_USER2 + " integer, " +
+                SESSION_COLUMN_INCOME + " integer);");
+    }
 
     @Override
     public Cursor selectManagerSession1(SQLiteDatabase datab) {

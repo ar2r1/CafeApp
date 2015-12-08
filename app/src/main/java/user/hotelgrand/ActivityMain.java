@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import java.util.Date;
 
+import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.interfaces.Utils;
+
 
 public class ActivityMain extends ActionBarActivity implements Utils {
 

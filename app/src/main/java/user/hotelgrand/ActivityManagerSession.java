@@ -1,5 +1,4 @@
 package user.hotelgrand;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,7 +10,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ActivityManagerSession extends ActionBarActivity implements Utils{
+import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.interfaces.Utils;
+
+public class ActivityManagerSession extends ActionBarActivity implements Utils {
 
     private ListView lvSession;
     private ArrayList<Map<String, Object>> data;
@@ -43,9 +45,6 @@ public class ActivityManagerSession extends ActionBarActivity implements Utils{
 
     @Override
     public void showData() {
-        //Intent i = getIntent();
-        //int idSessionItem = i.getIntExtra(dbHelper.SESSION_COLUMN_ID, 0);
-
         Cursor cursor1 = dbHelper.selectManagerSession1(db);
         Cursor cursor2 = dbHelper.selectManagerSession2(db);
 
