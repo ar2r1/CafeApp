@@ -26,7 +26,6 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
     private String firstName, secondName, login, password;
     private User u;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,26 +38,32 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bAddUserManagerUser:
-                Log.d(MY_LOGS_TAG, "Call ActManUser -> addData()");
+                Log.d(MY_LOGS_TAG, "Call ActManUser -> add()");
+
                 ContentValues contentValues = getValues();
                 u.addData(contentValues);
                 cleanFields();
                 Toast.makeText(this, "Успішно додано", Toast.LENGTH_SHORT).show();
-                Log.d(MY_LOGS_TAG, "End ActManUser -> addData()");
+
+                Log.d(MY_LOGS_TAG, "End ActManUser -> add()");
                 break;
 
             case R.id.bShowManagerUser:
-                Log.d(MY_LOGS_TAG, "Call ActManUser -> showData()");
-                u.showData(lvManagerUser, this);
+                Log.d(MY_LOGS_TAG, "Call ActManUser -> show()");
+
+                u.showData(lvManagerUser, getApplicationContext());
                 Toast.makeText(getApplicationContext(), "Список оновлено", Toast.LENGTH_SHORT).show();
-                Log.d(MY_LOGS_TAG, "End ActManUser -> showData()");
+
+                Log.d(MY_LOGS_TAG, "End ActManUser -> show()");
                 break;
 
             case R.id.bDeleteManagerUser:
-                Log.d(MY_LOGS_TAG, "Call ActManUser -> deleteData()");
+                Log.d(MY_LOGS_TAG, "Call ActManUser -> delete()");
+
                 detectFieldToDelete();
                 Toast.makeText(getApplicationContext(), "Успішно видалено", Toast.LENGTH_SHORT).show();
-                Log.d(MY_LOGS_TAG, "End ActManUser -> deleteData()");
+
+                Log.d(MY_LOGS_TAG, "End ActManUser -> delete()");
                 break;
         }
     }
@@ -102,13 +107,14 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
         lvManagerUser = (ListView) findViewById(R.id.lvUserManagerUser);
         lvManagerUser.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
-        u.onCreate(this);
+        u.onCreate(getApplicationContext());
         Log.d(MY_LOGS_TAG, "End ActManUser -> initVars()");
     }
 
     @Override
     public ContentValues getValues() {
         Log.d(MY_LOGS_TAG, "Call ActManUser -> getValues()");
+
         ContentValues cv = new ContentValues();
         firstName = etFirstNameManagerUser.getText().toString();
         secondName = etSecondNameManagerUser.getText().toString();
@@ -120,7 +126,6 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
         cv.put(USER_COLUMN_PASSWORD, password);
 
         Log.d(MY_LOGS_TAG, "End ActManUser -> getValues()");
-
         return cv;
     }
 
@@ -135,4 +140,5 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
             }
         }
     }
+
 }

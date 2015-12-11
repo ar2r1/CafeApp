@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,31 +20,37 @@ import user.hotelgrand.interfaces.DatabaseConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
 
 public class User implements DatabaseConstantsInterface, DatabaseFunctionInterface{
+
     private UserDBTable userTable;
     private SQLiteDatabase db;
     private DBHelper dbHelper;
-    private ContentValues cv;
     public ArrayList<Map<String, Object>> data;
-    public String[] from;
+
+    public User() {    }
 
     public void onCreate(Context context){
         Log.d(MY_LOGS_TAG, "Call User -> onCreate(Context)");
+
         dbHelper = new DBHelper(context);
         db = dbHelper.getWritableDatabase();
+
         Log.d(MY_LOGS_TAG, "End User -> onCreate(Context)");
     }
 
     public void closeConnection(){
         Log.d(MY_LOGS_TAG, "Call User -> closeConnection()");
+
         if (db != null)
             db.close();
         if (dbHelper != null)
             dbHelper.close();
+
         Log.d(MY_LOGS_TAG, "End User -> closeConnection()");
     }
 
     public void showData(ListView lv, Context context) {
         Log.d(MY_LOGS_TAG, "Call User -> showData(ListView, Context)");
+
         int fnameUserColIndex, snameUserColIndex, loginUserColIndex, passwordUserColIndex;
         Cursor cursor = userTable.selectFromDatabase(db);
         data = new ArrayList<>();
@@ -52,7 +59,7 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
         loginUserColIndex = cursor.getColumnIndex(USER_COLUMN_LOGIN);
         passwordUserColIndex = cursor.getColumnIndex(USER_COLUMN_PASSWORD);
 
-        from = new String[]{USER_COLUMN_FNAME, USER_COLUMN_SNAME,
+        String[] from = new String[]{USER_COLUMN_FNAME, USER_COLUMN_SNAME,
                 USER_COLUMN_LOGIN, USER_COLUMN_PASSWORD};
         int[] to = {R.id.tvFirstNameManagerUser, R.id.tvSecondNameManagerUser,
                 R.id.tvLoginManagerUser, R.id.tvPasswordManagerUser};
@@ -69,7 +76,8 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
                 m.put(USER_COLUMN_PASSWORD, cursor.getString(passwordUserColIndex));
                 data.add(m);
             } while (cursor.moveToNext());
-        }
+        } else
+            Toast.makeText(context, "немає записів", Toast.LENGTH_SHORT).show();
         if (!cursor.isClosed())
             cursor.close();
 
@@ -79,15 +87,19 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
     @Override
     public void addData(ContentValues cv) {
         Log.d(MY_LOGS_TAG, "Call User -> addData()");
+
         userTable.insertToDatabase(db, cv);
+
         Log.d(MY_LOGS_TAG, "End User -> addData()");
     }
 
     @Override
     public void deleteData(String login) {
         Log.d(MY_LOGS_TAG, "Call User -> deleteData()");
+
         userTable.deleteFromDatabase(db, DATABASE_TABLE_USER,
                 USER_COLUMN_LOGIN, login);
+
         Log.d(MY_LOGS_TAG, "End User -> deleteData()");
 
     }

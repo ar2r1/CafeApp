@@ -83,21 +83,6 @@ public class ActivityDish extends ActionBarActivity implements Utils {
     }
 
     @Override
-    public void getValues() {
-
-    }
-
-    @Override
-    public void addData() {
-
-    }
-
-    @Override
-    public void deleteData() {
-
-    }
-
-    @Override
     public void showData() {
         int dishColIndex, descColIndex, priceColIndex;
         Intent intent = getIntent();

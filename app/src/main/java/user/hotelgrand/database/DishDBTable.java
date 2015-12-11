@@ -3,16 +3,21 @@ package user.hotelgrand.database;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import user.hotelgrand.interfaces.DatabaseConstantsInterface;
 import user.hotelgrand.interfaces.DishTableInterface;
 
 public class DishDBTable implements DishTableInterface, DatabaseConstantsInterface {
 
+    public DishDBTable () {}
+    
     @Override
     public void createTable(SQLiteDatabase db) {
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> createTable()");
+
         db.execSQL("create table " + DATABASE_TABLE_CATEGORY + " (" +
-                CATEGORY_COLUMN_ID +" integer primary key autoincrement, " +
+                CATEGORY_COLUMN_ID + " integer primary key autoincrement, " +
                 CATEGORY_COLUMN_NAME + " text);");
 
         db.execSQL("create table " + DATABASE_TABLE_MENU + " ( " +
@@ -21,18 +26,25 @@ public class DishDBTable implements DishTableInterface, DatabaseConstantsInterfa
                 MENU_COLUMN_DESC + " text, " +
                 MENU_COLUMN_PRICE + "  integer, " +
                 CATEGORY_COLUMN_ID + " integer);");
-
         firstInsertData(db);
+
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> createTable()");
     }
 
     @Override
     public void deleteFromDatabase(SQLiteDatabase datab, String table, String i, String d) {
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> deleteFromDatabase()");
+
         String query = "delete from " + table + " where " + i + " like '" + d + "';";
         datab.execSQL(query);
+
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> deleteFromDatabase()");
     }
 
     @Override
     public void firstInsertData(SQLiteDatabase db) {
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> firstInsert()");
+
         db.execSQL("insert into category (id_category, name)values (1, 'Перші страви'); ");
         db.execSQL("insert into category (id_category, name)values (2, 'Другі страви'); ");
         db.execSQL("insert into category (id_category, name)values (3, 'Салати'); " );
@@ -71,10 +83,33 @@ public class DishDBTable implements DishTableInterface, DatabaseConstantsInterfa
                 "values (12, 5, 'Блінчики з яблуками', '(2 шт) 150г', 16); " );
         db.execSQL("insert into menu (id_menu, id_category, dish, description, price) " +
                 "values (13, 6, 'Комплекс 1', 'Борщ, пюре, відбивна, салат капустяний, сік, хліб', 44); ");
+
+        Log.d(MY_LOGS_TAG, "UserDBTable End -> firstInsert()");
+    }
+
+    public Cursor getGroupDish (SQLiteDatabase db) {
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> getGroupDish()");
+
+        String q = "select " + CATEGORY_COLUMN_NAME + " from " + DATABASE_TABLE_CATEGORY + ";";
+        Cursor c = db.rawQuery(q, null);
+
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> getGroupDish()");
+        return c;
+    }
+
+    @Override
+    public void insertToDatabase(SQLiteDatabase db, ContentValues conv) {
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> insertToDatabase()");
+
+        db.insert(DATABASE_TABLE_MENU, null, conv);
+
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> insertToDatabase()");
     }
 
     @Override
     public Cursor selectFromDatabase(SQLiteDatabase db){
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> selectFromDatabase()");
+
         String query = "select " + DATABASE_TABLE_CATEGORY + "." + CATEGORY_COLUMN_NAME + " as name, " +
                 DATABASE_TABLE_MENU + "." + MENU_COLUMN_DISH + " as dish, " +
                 DATABASE_TABLE_MENU + "." + MENU_COLUMN_DESC + " as description, " +
@@ -83,35 +118,25 @@ public class DishDBTable implements DishTableInterface, DatabaseConstantsInterfa
                 DATABASE_TABLE_MENU + "." + CATEGORY_COLUMN_ID + " = " +
                 DATABASE_TABLE_CATEGORY + "." + CATEGORY_COLUMN_ID + ";";
         Cursor c = db.rawQuery(query, null);
+
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> selectFromDatabase()");
         return c;
     }
 
     @Override
     public Cursor selectFromDatabase(SQLiteDatabase db, String str) {
-            String query = "select " + DATABASE_TABLE_MENU + "." + MENU_COLUMN_DISH + ", " +
-                    DATABASE_TABLE_MENU + "." + MENU_COLUMN_DESC + ", " +
-                    DATABASE_TABLE_MENU + "." + MENU_COLUMN_PRICE + " from " + DATABASE_TABLE_MENU +
-                    " where " + CATEGORY_COLUMN_ID + " in " +
-                    "(select " + CATEGORY_COLUMN_ID + " from " + DATABASE_TABLE_CATEGORY +
-                    " where " + CATEGORY_COLUMN_NAME + " like '" + str + "'); ";
-            Cursor c = db.rawQuery(query, null);
-            return c;
-    }
+        Log.d(MY_LOGS_TAG, "DishDBTable Call -> selectFromDatabase()");
 
-    @Override
-    public void insertToDatabase(String di, String de, int p, int id,
-                                 SQLiteDatabase db, ContentValues conv) {
-        conv.put(MENU_COLUMN_DISH, di);
-        conv.put(MENU_COLUMN_DESC, de);
-        conv.put(MENU_COLUMN_PRICE, p);
-        conv.put(CATEGORY_COLUMN_ID, id);
-        db.insert(DATABASE_TABLE_MENU, null, conv);
-        conv.clear();
-    }
+        String query = "select " + DATABASE_TABLE_MENU + "." + MENU_COLUMN_DISH + ", " +
+                DATABASE_TABLE_MENU + "." + MENU_COLUMN_DESC + ", " +
+                DATABASE_TABLE_MENU + "." + MENU_COLUMN_PRICE + " from " + DATABASE_TABLE_MENU +
+                " where " + CATEGORY_COLUMN_ID + " in " +
+                "(select " + CATEGORY_COLUMN_ID + " from " + DATABASE_TABLE_CATEGORY +
+                " where " + CATEGORY_COLUMN_NAME + " like '" + str + "'); ";
+        Cursor c = db.rawQuery(query, null);
 
-    public Cursor getGroupDish (SQLiteDatabase db) {
-        String q = "select " + CATEGORY_COLUMN_NAME + " from " + DATABASE_TABLE_CATEGORY + ";";
-        Cursor c = db.rawQuery(q, null);
+        Log.d(MY_LOGS_TAG, "DishDBTable End -> selectFromDatabase()");
         return c;
     }
+
 }
