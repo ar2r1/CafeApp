@@ -15,7 +15,7 @@ import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.interfaces.Utils;
 
 
-public class ActivityStart extends ActionBarActivity implements Utils {
+public class ActivityStart extends ActionBarActivity {
 
     private DBHelper dbHelper;
     private SQLiteDatabase db;
@@ -30,10 +30,17 @@ public class ActivityStart extends ActionBarActivity implements Utils {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        initVars();
+        Button bCallManager = (Button) findViewById(R.id.bCallManager);
+        bCallManager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iCallManager = new Intent (getApplicationContext(), ActivityManager.class);
+                startActivity(iCallManager);
+            }});
+        //initVars();
     }
 
-    @Override
+    /*@Override
     public void cleanFields() {
         if (etFirstUserPassword.getText().length() != 0)
             etFirstUserPassword.setText("");
@@ -160,5 +167,5 @@ public class ActivityStart extends ActionBarActivity implements Utils {
         if (dbHelper != null)
             dbHelper.close();
         finish();
-    }
+    }*/
 }

@@ -32,6 +32,7 @@ public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterfa
     public void onCreate(Context context){
         Log.d(MY_LOGS_TAG, "Call Dish -> onCreate(Context)");
 
+        dishTable = new DishDBTable();
         dbHelper = new DBHelper(context);
         db = dbHelper.getWritableDatabase();
 
@@ -59,8 +60,12 @@ public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterfa
     }
 
     @Override
-    public void deleteData(String login) {
+    public void deleteData(String dish) {
+        Log.d(MY_LOGS_TAG, "Dish Call -> deleteData()");
 
+        dishTable.deleteFromDatabase(db, dish);
+
+        Log.d(MY_LOGS_TAG, "Dish End -> deleteData()");
     }
 
     @Override

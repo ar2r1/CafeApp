@@ -32,10 +32,10 @@ public class DishDBTable implements DishTableInterface, DatabaseConstantsInterfa
     }
 
     @Override
-    public void deleteFromDatabase(SQLiteDatabase datab, String table, String i, String d) {
+    public void deleteFromDatabase(SQLiteDatabase datab, String d) {
         Log.d(MY_LOGS_TAG, "DishDBTable Call -> deleteFromDatabase()");
 
-        String query = "delete from " + table + " where " + i + " like '" + d + "';";
+        String query = "delete from " + DATABASE_TABLE_MENU + " where " + MENU_COLUMN_DISH + " like '" + d + "';";
         datab.execSQL(query);
 
         Log.d(MY_LOGS_TAG, "DishDBTable End -> deleteFromDatabase()");

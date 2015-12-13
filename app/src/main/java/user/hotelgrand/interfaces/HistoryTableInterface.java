@@ -1,9 +1,15 @@
 package user.hotelgrand.interfaces;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public interface HistoryTableInterface {
-    public void createTable (SQLiteDatabase datab);
-    public Cursor selectManagerHistory(SQLiteDatabase datab);
+
+    void createTable (SQLiteDatabase db);
+
+    void insertToDatabase(SQLiteDatabase db, ContentValues cv);
+
+    Cursor selectFromDatabase(SQLiteDatabase db);
+
 }

@@ -47,8 +47,8 @@ public class ActivityExpListView extends ActionBarActivity {
 
     private void showData () {
 
-        createGroupDish(groupData);
-        String groupFrom[] = new String[] {dbHelper.CATEGORY_COLUMN_NAME};
+        //createGroupDish(groupData);
+        //String groupFrom[] = new String[] {dbHelper.CATEGORY_COLUMN_NAME};
         int groupTo[] = new int[] {android.R.id.text1};
 
         /*Resources resources = getResources();
@@ -65,7 +65,7 @@ public class ActivityExpListView extends ActionBarActivity {
         childDataIt.add("child5");
         childDa.add(childDataIt);
 
-        String childFrom[] = new String [] {dbHelper.MENU_COLUMN_DISH};
+        //String childFrom[] = new String [] {dbHelper.MENU_COLUMN_DISH};
         int childTo[] = new int[] {android.R.id.text1};
 
         /*SimpleExpandableListAdapter sAdapter = new SimpleExpandableListAdapter(
@@ -83,7 +83,7 @@ public class ActivityExpListView extends ActionBarActivity {
         //expListDish.setAdapter(sAdapter);
     }
 
-    private ArrayList<Map<String, Object>> createGroupDish (ArrayList<Map<String, Object>> group) {
+    /*private ArrayList<Map<String, Object>> createGroupDish (ArrayList<Map<String, Object>> group) {
         Cursor c = dbHelper.getGroupDish(db);
         int nameCategory = c.getColumnIndex(dbHelper.CATEGORY_COLUMN_NAME);
 
@@ -112,6 +112,6 @@ public class ActivityExpListView extends ActionBarActivity {
 
         return childD;
     }
-
+*/
 
 }

@@ -20,7 +20,7 @@ import java.util.Map;
 import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.interfaces.Utils;
 
-public class ActivityRestaurant extends ActionBarActivity implements View.OnClickListener, Utils {
+public class ActivityRestaurant extends ActionBarActivity implements View.OnClickListener {
 
     private ListView lvOrderList;
     private ArrayList<Map<String, Object>> data;
@@ -104,7 +104,7 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
         int mustPay = 0;
         ContentValues cv = new ContentValues();
         Intent intent = getIntent();
-        int idSession = intent.getIntExtra(dbHelper.SESSION_COLUMN_ID, 0);
+        //int idSession = intent.getIntExtra(dbHelper.SESSION_COLUMN_ID, 0);
         db = dbHelper.getWritableDatabase();
         SparseBooleanArray sbArray = lvOrderList.getCheckedItemPositions();
         for (int i = 0; i < sbArray.size(); i++) {
@@ -117,11 +117,11 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
                 mustPay += costItem;
                 String curentDate = (String) DateFormat.format("kk:mm:ss dd-MM-yyyy", new Date());
 
-                cv.put(dbHelper.SESSION_COLUMN_ID, idSession);
+                /*cv.put(dbHelper.SESSION_COLUMN_ID, idSession);
                 cv.put(dbHelper.HISTORY_COLUMN_NAME, nameItem);
                 cv.put(dbHelper.HISTORY_COLUMN_COST, costItem);
                 cv.put(dbHelper.HISTORY_COLUMN_DATE, curentDate);
-                db.insert(dbHelper.DATABASE_TABLE_HISTORY, null, cv);
+                db.insert(dbHelper.DATABASE_TABLE_HISTORY, null, cv);*/
             }
         }
         Toast.makeText(this, "До оплати " + mustPay + " грн.", Toast.LENGTH_LONG).show();
@@ -189,7 +189,7 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
         finish();
     }
 
-    @Override
+    //@Override
     public void cleanFields() {
         if (db != null)
             db.close();
@@ -197,7 +197,7 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
             dbHelper.close();
     }
 
-    @Override
+    //@Override
     public void initVars() {
         Button bFirstDishes = (Button) findViewById(R.id.bFirstDishes);
         bFirstDishes.setOnClickListener(this);
@@ -233,7 +233,7 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
         data = new ArrayList<>();
     }
 
-    @Override
+    /*@Override
     public void getValues() {
 
     }
@@ -251,5 +251,5 @@ public class ActivityRestaurant extends ActionBarActivity implements View.OnClic
     @Override
     public void showData() {
 
-    }
+    }*/
 }

@@ -31,6 +31,7 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
     public void onCreate(Context context){
         Log.d(MY_LOGS_TAG, "Call User -> onCreate(Context)");
 
+        userTable = new UserDBTable();
         dbHelper = new DBHelper(context);
         db = dbHelper.getWritableDatabase();
 

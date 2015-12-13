@@ -72,6 +72,7 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
     public void onBackPressed() {
         super.onBackPressed();
         cleanFields();
+        u.closeConnection();
         finish();
     }
 
@@ -85,7 +86,6 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
             etLoginManagerUser.setText("");
         if (etPasswordManagerUser.getText().length() != 0)
             etPasswordManagerUser.setText("");
-        u.closeConnection();
     }
 
     @Override
@@ -107,6 +107,7 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
         lvManagerUser = (ListView) findViewById(R.id.lvUserManagerUser);
         lvManagerUser.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
+        u = new User();
         u.onCreate(getApplicationContext());
         Log.d(MY_LOGS_TAG, "End ActManUser -> initVars()");
     }

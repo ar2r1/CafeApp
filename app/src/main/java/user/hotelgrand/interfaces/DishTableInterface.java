@@ -16,5 +16,5 @@ public interface DishTableInterface {
 
     void insertToDatabase(SQLiteDatabase db, ContentValues conv);
 
-    void deleteFromDatabase(SQLiteDatabase datab, String table, String i, String d);
+    void deleteFromDatabase(SQLiteDatabase datab, String d);
 }

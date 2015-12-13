@@ -18,7 +18,7 @@ import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.interfaces.Utils;
 
 
-public class ActivityDish extends ActionBarActivity implements Utils {
+public class ActivityDish extends ActionBarActivity  {
 
     private final String DISH_ITEM = "dishItem";
     private final String DESC_ITEM = "descriptionItem";
@@ -35,7 +35,7 @@ public class ActivityDish extends ActionBarActivity implements Utils {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dish);
 
-        initVars();
+        /*initVars();
         showData();
     }
 
@@ -111,5 +111,5 @@ public class ActivityDish extends ActionBarActivity implements Utils {
         if (!cursor.isClosed())
             cursor.close();
     }
-
-}
+*/
+}}

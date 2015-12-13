@@ -80,6 +80,7 @@ public class ActivityManagerMenu extends ActionBarActivity implements View.OnCli
     public void onBackPressed() {
         super.onBackPressed();
         cleanFields();
+        d.closeConnection();
         finish();
     }
 
@@ -91,7 +92,6 @@ public class ActivityManagerMenu extends ActionBarActivity implements View.OnCli
             etDescDishManagerMenu.setText("");
         if (etPriceDishManagerMenu.getText().length() != 0)
             etPriceDishManagerMenu.setText("");
-        d.closeConnection();
     }
 
     @Override
@@ -117,7 +117,8 @@ public class ActivityManagerMenu extends ActionBarActivity implements View.OnCli
         lvManagerMenu = (ListView) findViewById(R.id.lvManagerMenu);
         lvManagerMenu.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
-        d.onCreate(getApplicationContext());
+        d = new Dish();
+        d.onCreate(this);
         Log.d(MY_LOGS_TAG, "End ActManMenu -> initVars()");
     }
 
@@ -134,7 +135,7 @@ public class ActivityManagerMenu extends ActionBarActivity implements View.OnCli
         cv.put(MENU_COLUMN_DISH, dish);
         cv.put(MENU_COLUMN_DESC, description);
         cv.put(MENU_COLUMN_PRICE, price);
-        cv.put(MENU_COLUMN_ID, id_category);
+        cv.put(CATEGORY_COLUMN_ID, id_category);
 
         Log.d(MY_LOGS_TAG, "End ActManMenu -> initVars()");
         return cv;

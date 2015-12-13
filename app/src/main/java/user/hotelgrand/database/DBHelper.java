@@ -19,11 +19,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         DishDBTable dish = new DishDBTable();
         dish.createTable(db);
-        dish.firstInsertData(db);
+        //dish.firstInsertData(db);
 
         UserDBTable user = new UserDBTable();
         user.createTable(db);
-        user.firstInsertData(db);
+        //user.firstInsertData(db);
 
         SessionDBTable session = new SessionDBTable();
         session.createTable(db);

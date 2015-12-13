@@ -18,7 +18,7 @@ import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.interfaces.Utils;
 
 
-public class ActivityMain extends ActionBarActivity implements Utils {
+public class ActivityMain extends ActionBarActivity {
 
     private SQLiteDatabase db;
     private DBHelper dbHelper;
@@ -29,7 +29,7 @@ public class ActivityMain extends ActionBarActivity implements Utils {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         initVars();
         Cursor cursorSession = dbHelper.getIdSession(db);
         cursorSession.moveToFirst();
@@ -126,6 +126,6 @@ public class ActivityMain extends ActionBarActivity implements Utils {
 
     @Override
     public void getValues() {
-
+*/
     }
 }
