@@ -15,6 +15,7 @@ import java.util.Map;
 
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
+import user.hotelgrand.database.DBConnection;
 import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.database.HistoryDBTable;
 import user.hotelgrand.database.UserDBTable;
@@ -25,7 +26,8 @@ public class History implements DatabaseConstantsInterface, DatabaseFunctionInte
 
     private HistoryDBTable historyTable;
     private SQLiteDatabase db;
-    private DBHelper dbHelper;
+    private DBConnection connection;
+
     public ArrayList<Map<String, Object>> data;
 
     public History () {}
@@ -34,21 +36,18 @@ public class History implements DatabaseConstantsInterface, DatabaseFunctionInte
         Log.d(MY_LOGS_TAG, "Call History -> onCreate()");
 
         historyTable = new HistoryDBTable();
-        dbHelper = new DBHelper(context);
-        db = dbHelper.getWritableDatabase();
+        connection = new DBConnection();
+        db = connection.openConnection(db, context);
 
         Log.d(MY_LOGS_TAG, "End History -> onCreate()");
     }
 
-    public void closeConnection(){
-        Log.d(MY_LOGS_TAG, "Call History -> closeConnection()");
+    public void onDestroy() {
+        Log.d(MY_LOGS_TAG, "Call History -> onDestroy()");
 
-        if (db != null)
-            db.close();
-        if (dbHelper != null)
-            dbHelper.close();
+        connection.closeConnection(db);
 
-        Log.d(MY_LOGS_TAG, "End History -> closeConnection()");
+        Log.d(MY_LOGS_TAG, "End History -> onDestroy()");
     }
 
     public void showData (ListView lv, Context context) {

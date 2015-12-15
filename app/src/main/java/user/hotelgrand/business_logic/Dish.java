@@ -2,7 +2,6 @@ package user.hotelgrand.business_logic;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -15,7 +14,7 @@ import java.util.Map;
 
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
-import user.hotelgrand.database.DBHelper;
+import user.hotelgrand.database.DBConnection;
 import user.hotelgrand.database.DishDBTable;
 import user.hotelgrand.interfaces.DatabaseConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
@@ -24,7 +23,8 @@ public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterfa
 
     private DishDBTable dishTable;
     private SQLiteDatabase db;
-    private DBHelper dbHelper;
+    private DBConnection connection;
+
     public ArrayList<Map<String, Object>> data;
 
     public Dish () {}
@@ -33,21 +33,18 @@ public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterfa
         Log.d(MY_LOGS_TAG, "Call Dish -> onCreate(Context)");
 
         dishTable = new DishDBTable();
-        dbHelper = new DBHelper(context);
-        db = dbHelper.getWritableDatabase();
+        connection = new DBConnection();
+        db = connection.openConnection(db, context);
 
         Log.d(MY_LOGS_TAG, "End Dish -> onCreate(Context)");
     }
 
-    public void closeConnection(){
-        Log.d(MY_LOGS_TAG, "Call Dish -> closeConnection()");
+    public void onDestroy() {
+        Log.d(MY_LOGS_TAG, "Dish Call -> onDestroy()");
 
-        if (db != null)
-            db.close();
-        if (dbHelper != null)
-            dbHelper.close();
+        connection.closeConnection(db);
 
-        Log.d(MY_LOGS_TAG, "End Dish -> closeConnection()");
+        Log.d(MY_LOGS_TAG, "Dish End -> onDestroy()");
     }
 
     @Override

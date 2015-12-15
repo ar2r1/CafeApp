@@ -39,7 +39,7 @@ public class ActivityManagerHistory extends ActionBarActivity implements Utils, 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        h.closeConnection();
+        h.onDestroy();
         finish();
     }
 

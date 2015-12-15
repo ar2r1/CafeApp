@@ -14,6 +14,7 @@ import java.util.Map;
 
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
+import user.hotelgrand.database.DBConnection;
 import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.database.UserDBTable;
 import user.hotelgrand.interfaces.DatabaseConstantsInterface;
@@ -23,7 +24,7 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
 
     private UserDBTable userTable;
     private SQLiteDatabase db;
-    private DBHelper dbHelper;
+    private DBConnection connection;
     public ArrayList<Map<String, Object>> data;
 
     public User() {    }
@@ -32,21 +33,18 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
         Log.d(MY_LOGS_TAG, "Call User -> onCreate(Context)");
 
         userTable = new UserDBTable();
-        dbHelper = new DBHelper(context);
-        db = dbHelper.getWritableDatabase();
+        connection = new DBConnection();
+        db = connection.openConnection(db, context);
 
         Log.d(MY_LOGS_TAG, "End User -> onCreate(Context)");
     }
 
-    public void closeConnection(){
-        Log.d(MY_LOGS_TAG, "Call User -> closeConnection()");
+    public void onDestroy() {
+        Log.d(MY_LOGS_TAG, "Dish Call -> onDestroy()");
 
-        if (db != null)
-            db.close();
-        if (dbHelper != null)
-            dbHelper.close();
+        connection.closeConnection(db);
 
-        Log.d(MY_LOGS_TAG, "End User -> closeConnection()");
+        Log.d(MY_LOGS_TAG, "Dish End -> onDestroy()");
     }
 
     public void showData(ListView lv, Context context) {

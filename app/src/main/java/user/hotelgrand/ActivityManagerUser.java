@@ -72,7 +72,7 @@ public class ActivityManagerUser extends ActionBarActivity implements View.OnCli
     public void onBackPressed() {
         super.onBackPressed();
         cleanFields();
-        u.closeConnection();
+        u.onDestroy();
         finish();
     }
 

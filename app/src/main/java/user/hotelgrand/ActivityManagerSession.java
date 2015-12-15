@@ -62,7 +62,7 @@ public class ActivityManagerSession extends ActionBarActivity implements Utils, 
     public void onBackPressed() {
         super.onBackPressed();
         cleanFields();
-        s.closeConnection();
+        s.onDestroy();
         finish();
     }
 

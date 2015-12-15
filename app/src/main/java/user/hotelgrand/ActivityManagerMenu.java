@@ -80,7 +80,7 @@ public class ActivityManagerMenu extends ActionBarActivity implements View.OnCli
     public void onBackPressed() {
         super.onBackPressed();
         cleanFields();
-        d.closeConnection();
+        d.onDestroy();
         finish();
     }
 
