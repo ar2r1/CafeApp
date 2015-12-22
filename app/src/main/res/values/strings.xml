@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Grand</string>
+    <string name="app_name">Cafe</string>
     <string name="action_settings">Налаштування</string>
-    <string name="title_activity_main">Головне вікно</string>
-    <string name="title_activity_restaurant">Ресторан</string>
+    <string name="title_activity_main">Кафе</string>
+    <string name="title_activity_restaurant">Кафе</string>
     <string name="title_activity_dish">Страви</string>
-    <string name="title_activity_manager">Менеджер</string>
-    <string name="title_activity_manager_menu">Менеджер меню</string>
-    <string name="title_activity_manager_history">Історія</string>
-    <string name="title_activity_manager_session">Робочі зміни</string>
-    <string name="title_activity_manager_user">Користувачі</string>
+    <string name="title_activity_editor">Менеджер</string>
+    <string name="title_activity_editor_menu">Менеджер меню</string>
+    <string name="title_activity_editor_history">Історія</string>
+    <string name="title_activity_editor_session">Робочі зміни</string>
+    <string name="title_activity_editor_user">Користувачі</string>
     <string name="title_activity_activity_choose_user">Activity_choose_user</string>
     <string name="title_activity_activity_user">Activity_user</string>
     <string name="title_activity_activity_manager_session">ActivityManagerSession</string>
     <string name="title_activity_exp_list_view">ExpListView</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_kgv">KGV</string>
+    <string name="first_user_authorization">Авторизація першого користувача</string>
+    <string name="second_user_authorization">Авторизація другого користувача</string>
 
 </resources>

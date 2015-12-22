@@ -16,13 +16,11 @@ import java.util.Map;
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
 import user.hotelgrand.database.DBConnection;
-import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.database.HistoryDBTable;
-import user.hotelgrand.database.UserDBTable;
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
 
-public class History implements DatabaseConstantsInterface, DatabaseFunctionInterface {
+public class History implements ConstantsInterface, DatabaseFunctionInterface {
 
     private HistoryDBTable historyTable;
     private SQLiteDatabase db;
@@ -65,7 +63,7 @@ public class History implements DatabaseConstantsInterface, DatabaseFunctionInte
                 HISTORY_COLUMN_COST, HISTORY_COLUMN_DATE};
         int[] to = {R.id.tvIdItemHistory, R.id.tvSessionItemHistory, R.id.tvNameItemHistory,
                 R.id.tvPriceItemHistory, R.id.tvDateItemHistory};
-        lv.setAdapter(new MySimpleAdapter(context, data, R.layout.item_manager_history, from, to));
+        lv.setAdapter(new MySimpleAdapter(context, data, R.layout.item_editor_history, from, to));
 
         if (cursor.moveToFirst()) {
             do {

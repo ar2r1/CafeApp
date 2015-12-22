@@ -15,13 +15,11 @@ import java.util.Map;
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
 import user.hotelgrand.database.DBConnection;
-import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.database.SessionDBTable;
-import user.hotelgrand.database.UserDBTable;
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
 
-public class Session implements DatabaseConstantsInterface, DatabaseFunctionInterface {
+public class Session implements ConstantsInterface, DatabaseFunctionInterface {
 
     private SessionDBTable sessionTable;
     private SQLiteDatabase db;
@@ -69,7 +67,7 @@ public class Session implements DatabaseConstantsInterface, DatabaseFunctionInte
                 R.id.tvItemDateEndManagerSession, R.id.tvItemFisrtName1ManagerSession,
                 R.id.tvItemSecondNameManagerSession, R.id.tvItemFisrtName2ManagerSession,
                 R.id.tvItemSecondName2ManagerSession, R.id.tvItemIncomeManagerSession};
-        lv.setAdapter(new MySimpleAdapter(context, data, R.layout.item_manager_session, from, to));
+        lv.setAdapter(new MySimpleAdapter(context, data, R.layout.item_editor_session, from, to));
 
         if (cursor1.moveToFirst() && cursor2.moveToFirst()) {
             do {

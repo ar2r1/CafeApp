@@ -5,10 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.UserTableInterface;
 
-public class UserDBTable implements UserTableInterface, DatabaseConstantsInterface {
+public class UserDBTable implements UserTableInterface, ConstantsInterface {
 
     public UserDBTable () {}
 

@@ -16,10 +16,10 @@ import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
 import user.hotelgrand.database.DBConnection;
 import user.hotelgrand.database.DishDBTable;
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
 
-public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterface {
+public class Dish implements DatabaseFunctionInterface, ConstantsInterface {
 
     private DishDBTable dishTable;
     private SQLiteDatabase db;
@@ -81,7 +81,7 @@ public class Dish implements DatabaseFunctionInterface, DatabaseConstantsInterfa
                 MENU_COLUMN_DESC, MENU_COLUMN_PRICE};
         int[] to = {R.id.tvCategoryItemManagerMenu, R.id.tvDishItemManagerMenu,
                 R.id.tvDescriptionItemManagerMenu, R.id.tvPriceItemManagerMenu};
-        MySimpleAdapter sAdapter = new MySimpleAdapter(context, data, R.layout.item_manager_menu, from, to);
+        MySimpleAdapter sAdapter = new MySimpleAdapter(context, data, R.layout.item_editor_menu, from, to);
         lv.setAdapter(sAdapter);
 
         if (cursor.moveToFirst()) {

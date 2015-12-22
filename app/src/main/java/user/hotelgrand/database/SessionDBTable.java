@@ -4,10 +4,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.SessionTableInterface;
 
-public class SessionDBTable implements SessionTableInterface, DatabaseConstantsInterface {
+public class SessionDBTable implements SessionTableInterface, ConstantsInterface {
 
     @Override
     public void createTable (SQLiteDatabase datab){

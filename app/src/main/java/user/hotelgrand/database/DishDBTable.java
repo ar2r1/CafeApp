@@ -5,10 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.DishTableInterface;
 
-public class DishDBTable implements DishTableInterface, DatabaseConstantsInterface {
+public class DishDBTable implements DishTableInterface, ConstantsInterface {
 
     public DishDBTable () {}
     

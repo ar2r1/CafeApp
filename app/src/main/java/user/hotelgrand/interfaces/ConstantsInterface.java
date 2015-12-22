@@ -4,9 +4,12 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public interface DatabaseConstantsInterface {
+public interface ConstantsInterface {
 
     String MY_LOGS_TAG = "myLogs";
+
+    String STATE_OK = "Користувач успішно авторизований";
+    String STATE_WRONG = "Неправильні логін чи пароль";
 
     String DATABASE_TABLE_MENU = "menu";
     String MENU_COLUMN_ID = "id_menu";

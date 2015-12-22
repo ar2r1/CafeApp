@@ -4,10 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import user.hotelgrand.database.DBHelper;
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 
-public class DBConnection implements DatabaseConstantsInterface {
+public class DBConnection implements ConstantsInterface {
 
     public DBHelper dbHelper;
 

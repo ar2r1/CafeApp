@@ -18,48 +18,44 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityMain"
+            android:name=".user_interface.restaurant_interface.ActivityMain"
             android:label="@string/title_activity_main"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityRestaurant"
+            android:name=".user_interface.restaurant_interface.ActivityRestaurant"
             android:label="@string/title_activity_restaurant"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityDish"
+            android:name=".user_interface.restaurant_interface.ActivityDish"
             android:label="@string/title_activity_dish"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityManager"
-            android:label="@string/title_activity_manager"
+            android:name=".user_interface.editor_interface.ActivityEditor"
+            android:label="@string/title_activity_editor"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityManagerMenu"
-            android:label="@string/title_activity_manager_menu"
+            android:name=".user_interface.editor_interface.ActivityEditorMenu"
+            android:label="@string/title_activity_editor_menu"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityManagerHistory"
-            android:label="@string/title_activity_manager_history"
+            android:name=".user_interface.editor_interface.ActivityEditorHistory"
+            android:label="@string/title_activity_editor_history"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityManagerUser"
+            android:name=".user_interface.editor_interface.ActivityEditorUser"
             android:label="@string/title_activity_activity_user"
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".ActivityManagerSession"
+            android:name=".user_interface.editor_interface.ActivityEditorSession"
             android:label="@string/title_activity_activity_manager_session"
             android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name=".ActivityExpListView"
-            android:label="@string/title_activity_exp_list_view" >
         </activity>
     </application>
 

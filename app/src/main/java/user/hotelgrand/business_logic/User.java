@@ -15,12 +15,11 @@ import java.util.Map;
 import user.hotelgrand.MySimpleAdapter;
 import user.hotelgrand.R;
 import user.hotelgrand.database.DBConnection;
-import user.hotelgrand.database.DBHelper;
 import user.hotelgrand.database.UserDBTable;
-import user.hotelgrand.interfaces.DatabaseConstantsInterface;
+import user.hotelgrand.interfaces.ConstantsInterface;
 import user.hotelgrand.interfaces.DatabaseFunctionInterface;
 
-public class User implements DatabaseConstantsInterface, DatabaseFunctionInterface{
+public class User implements ConstantsInterface, DatabaseFunctionInterface{
 
     private UserDBTable userTable;
     private SQLiteDatabase db;
@@ -62,7 +61,7 @@ public class User implements DatabaseConstantsInterface, DatabaseFunctionInterfa
                 USER_COLUMN_LOGIN, USER_COLUMN_PASSWORD};
         int[] to = {R.id.tvFirstNameManagerUser, R.id.tvSecondNameManagerUser,
                 R.id.tvLoginManagerUser, R.id.tvPasswordManagerUser};
-        MySimpleAdapter sAdapter = new MySimpleAdapter(context, data, R.layout.item_manager_user,
+        MySimpleAdapter sAdapter = new MySimpleAdapter(context, data, R.layout.item_editor_user,
                 from, to);
         lv.setAdapter(sAdapter);
 
